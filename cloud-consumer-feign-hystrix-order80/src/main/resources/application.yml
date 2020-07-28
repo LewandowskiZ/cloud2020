@@ -10,7 +10,7 @@ eureka:
 
 feign:
   hystrix:
-    enabled: true
+    enabled: true #画蛇添足？
 
 #设置feign客户端超时时间(OpenFeign默认支持ribbon)
 ribbon:

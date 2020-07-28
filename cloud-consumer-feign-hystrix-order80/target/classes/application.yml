@@ -11,13 +11,24 @@ eureka:
 feign:
   hystrix:
     enabled: true
+    command:
+      default:
+        execution:
+          isolation:
+            thread:
+              timeoutInMilliseconds: 5000 # 设置hystrix的超时时间为5000ms
+  client:
+    config:
+      default:
+        connectTimeout: 5000 # feign 的超时设置（feign的默认超时时间为1s）
+        readTimeout: 5000
 
 #设置feign客户端超时时间(OpenFeign默认支持ribbon)
 ribbon:
 #指的是建立连接后从服务器读取到可用资源所用的时间
-  ReadTimeout: 2500
+  ReadTimeout: 5000
 #指的是建立连接所用的时间，适用于网络状况正常的情况下,两端连接所用的时间
-  ConnectTimeout: 2500
+  ConnectTimeout: 5000
 #
 #logging:
 #  level:
