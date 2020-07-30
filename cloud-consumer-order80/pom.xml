@@ -12,6 +12,11 @@
     <artifactId>cloud-consumer-order80</artifactId>
 
     <dependencies>
+        <!--包含了sleuth+zipkin--><!--P94-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
         <!--eureka-client(Ribbon 已被集成在内)-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
