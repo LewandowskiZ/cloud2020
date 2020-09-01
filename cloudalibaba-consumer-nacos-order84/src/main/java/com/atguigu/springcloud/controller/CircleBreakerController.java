@@ -31,7 +31,7 @@ public class CircleBreakerController {
     @SentinelResource(value = "fallback",
                       fallback = "handlerFallback",
                       blockHandler = "blockHandler",
-                      exceptionsToIgnore = {IllegalArgumentException.class})
+                      exceptionsToIgnore = {IllegalArgumentException.class}) //异常忽略
     public CommonResult<Payment> fallback(@PathVariable Long id) {
 
         CommonResult<Payment> result = restTemplate.getForObject(SERVICE_URL + "/paymentSQL/"+id, CommonResult.class,id);
